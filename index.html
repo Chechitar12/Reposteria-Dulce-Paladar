@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dulce Paladar</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+
+<div class="contenedor">
+
+    <!-- ENCABEZADO -->
+    <header>
+
+        <div class="logo">
+            <img src="Imagenes/Logo.jpeg" alt="Logo Dulce Paladar">
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="#">INICIO</a></li>
+                <li><a href="#">NOSOTROS</a></li>
+                <li><a href="#">PRODUCTOS</a></li>
+                <li><a href="#">PERSONALIZADOS</a></li>
+                <li><a href="#">CONTACTO</a></li>
+            </ul>
+        </nav>
+
+        <div class="carrito">
+            <img src="Imagenes/Carrito.png" alt="Carrito">
+            <span>CARRITO</span>
+        </div>
+
+    </header>
+
+    <!-- SECCIÓN POSTRES -->
+    <section class="postres">
+
+        <h1>♥ Nuestros Postres</h1>
+
+        <h2 class="subtitulo">
+            Descubre la variedad de sabores irresistibles
+        </h2>
+
+        <div class="categorias">
+            <button>TORTAS</button>
+            <button>POSTRES DULCES</button>
+            <button>BOCADITOS</button>
+            <button>POSTRES SALADOS</button>
+            <button>ROLLOS DP</button>
+        </div>
+
+        <div class="productos">
+
+            <!-- PRODUCTO 1 -->
+            <div class="producto"
+                onclick="mostrarProducto(
+                'Carlota de Limón',
+                'S/ 12.00',
+                'Un delicado equilibrio entre frescura cítrica y suave dulzura.',
+                'Imagenes/Carlota de Limon.png'
+                )">
+
+                <img src="Imagenes/Carlota de Limon.png" alt="Carlota de Limón">
+
+                <div class="detalle-hover">
+                    <h4>Carlota de Limón</h4>
+                    <p>Frescura cítrica y suavidad cremosa en cada cucharada.</p>
+                </div>
+
+                <h3>Carlota de Limón</h3>
+                <p>S / 12.00</p>
+
+            </div>
+
+            <!-- PRODUCTO 2 -->
+            <div class="producto"
+                onclick="mostrarProducto(
+                'Leche Asada',
+                'S/ 15.00',
+                'La esencia de la repostería tradicional en una textura irresistible.',
+                'Imagenes/Leche asada.png'
+                )">
+
+                <img src="Imagenes/Leche asada.png" alt="Leche Asada">
+
+                <div class="detalle-hover">
+                    <h4>Leche Asada</h4>
+                    <p>Tradición peruana con un toque delicado y artesanal.</p>
+                </div>
+
+                <h3>Leche Asada</h3>
+                <p>S / 15.00</p>
+
+            </div>
+
+            <!-- PRODUCTO 3 -->
+            <div class="producto"
+                onclick="mostrarProducto(
+                'Tarta de Queso',
+                'S/ 45.00',
+                'Suave, cremosa y elaborada para los amantes de los sabores refinados.',
+                'Imagenes/Tarta de queso.jpeg'
+                )">
+
+                <img src="Imagenes/Tarta de queso.jpeg" alt="Tarta de Queso">
+
+                <div class="detalle-hover">
+                    <h4>Tarta de Queso</h4>
+                    <p>Una textura cremosa que conquista desde el primer bocado.</p>
+                </div>
+
+                <h3>Tarta de Queso</h3>
+                <p>S / 45.00</p>
+
+            </div>
+
+            <!-- PRODUCTO 4 -->
+            <div class="producto"
+                onclick="mostrarProducto(
+                'Tartaleta de Fresa',
+                'S/ 18.00',
+                'Fresas seleccionadas sobre una base artesanal de exquisita delicadeza.',
+                'Imagenes/tartaleta de fresa.png'
+                )">
+
+                <img src="Imagenes/tartaleta de fresa.png" alt="Tartaleta de Fresa">
+
+                <div class="detalle-hover">
+                    <h4>Tartaleta de Fresa</h4>
+                    <p>Fresas frescas y crema artesanal en perfecta armonía.</p>
+                </div>
+
+                <h3>Tartaleta de Fresa</h3>
+                <p>S / 18.00</p>
+
+            </div>
+
+            <!-- PRODUCTO 5 -->
+            <div class="producto"
+                onclick="mostrarProducto(
+                'Rollo de Lúcuma',
+                'S/ 65.00',
+                'Una exquisita fusión de tradición peruana y elegancia repostera.',
+                'Imagenes/Rollo de lucuma.jpeg'
+                )">
+
+                <img src="Imagenes/Rollo de lucuma.jpeg" alt="Rollo de Lúcuma">
+
+                <div class="detalle-hover">
+                    <h4>Rollo de Lúcuma</h4>
+                    <p>El sabor emblemático del Perú convertido en arte repostero.</p>
+                </div>
+
+                <h3>Rollo de Lúcuma</h3>
+                <p>S / 65.00</p>
+
+            </div>
+
+        </div>
+
+        <a href="#" class="boton">
+            ♥ VER TODOS LOS PRODUCTOS
+        </a>
+
+    </section>
+
+</div>
+
+<!-- MODAL -->
+
+<div id="modalProducto" class="modal">
+
+    <div class="modal-contenido">
+
+        <span class="cerrar" onclick="cerrarModal()">
+            &times;
+        </span>
+
+        <img id="imgModal" src="" alt="Producto">
+
+        <h2 id="nombreModal"></h2>
+
+        <h3 id="precioModal"></h3>
+
+        <p id="descripcionModal"></p>
+
+        <button class="btn-comprar">
+            Agregar al carrito
+        </button>
+
+    </div>
+
+</div>
+
+<script>
+
+function mostrarProducto(nombre, precio, descripcion, imagen){
+
+    document.getElementById("nombreModal").innerHTML = nombre;
+    document.getElementById("precioModal").innerHTML = precio;
+    document.getElementById("descripcionModal").innerHTML = descripcion;
+    document.getElementById("imgModal").src = imagen;
+
+    document.getElementById("modalProducto").style.display = "flex";
+}
+
+function cerrarModal(){
+    document.getElementById("modalProducto").style.display = "none";
+}
+
+window.onclick = function(event){
+
+    let modal = document.getElementById("modalProducto");
+
+    if(event.target == modal){
+        modal.style.display = "none";
+    }
+}
+
+</script>
+
+</body>
+</html>

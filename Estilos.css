@@ -1,0 +1,341 @@
+/* ============================= */
+/* ESTILOS GENERALES */
+/* ============================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background-color:#FCEDEE;
+    color:#4A4A4A;
+    font-family:'Noto Serif', serif;
+}
+
+.contenedor{
+    width:1200px;
+    margin:auto;
+}
+
+/* ============================= */
+/* ENCABEZADO */
+/* ============================= */
+
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:25px 0;
+}
+
+.logo img{
+    width:150px;
+}
+
+nav{
+    background:#F6D1D6;
+    padding:18px 35px;
+    border-radius:12px;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:45px;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:#4A4A4A;
+    font-weight:bold;
+    font-size:18px;
+    transition:.3s;
+}
+
+nav ul li a:hover{
+    color:#D4AF37;
+}
+
+.carrito{
+    text-align:center;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+.carrito img{
+    width:55px;
+    height:55px;
+}
+
+.carrito span{
+    font-size:14px;
+    font-weight:bold;
+}
+
+/* ============================= */
+/* TITULOS */
+/* ============================= */
+
+.postres{
+    text-align:center;
+    padding:30px 0 60px;
+}
+
+.postres h1{
+    font-family:'Dancing Script', cursive;
+    font-size:48px;
+    margin-bottom:10px;
+}
+
+.subtitulo{
+    font-size:20px;
+    margin-bottom:30px;
+}
+
+/* ============================= */
+/* CATEGORIAS */
+/* ============================= */
+
+.categorias{
+    display:flex;
+    justify-content:center;
+    gap:18px;
+    flex-wrap:wrap;
+    margin-bottom:40px;
+}
+
+.categorias button{
+    background:#F6D1D6;
+    color:white;
+    border:none;
+    border-radius:30px;
+    padding:12px 28px;
+    cursor:pointer;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.categorias button:hover{
+    background:#E7A9B0;
+    transform:translateY(-3px);
+}
+
+/* ============================= */
+/* PRODUCTOS */
+/* ============================= */
+
+.productos{
+    display:flex;
+    justify-content:space-between;
+    gap:25px;
+}
+
+.producto{
+    width:20%;
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    cursor:pointer;
+    transition:.4s;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.producto:hover{
+    transform:translateY(-10px);
+    box-shadow:0 15px 30px rgba(0,0,0,.18);
+}
+
+.producto img{
+    width:100%;
+    height:190px;
+    object-fit:cover;
+    transition:.4s;
+}
+
+.producto:hover img{
+    transform:scale(1.05);
+}
+
+.producto h3{
+    margin:15px;
+    font-size:20px;
+    color:#4A4A4A;
+}
+
+.producto p{
+    margin:15px;
+    font-size:22px;
+    color:#D4AF37;
+    font-weight:bold;
+}
+
+/* ============================= */
+/* DESCRIPCIÓN HOVER */
+/* ============================= */
+
+.detalle-hover{
+    background:#FFF8F6;
+    border-top:1px solid #F6D1D6;
+
+    max-height:0;
+    overflow:hidden;
+
+    opacity:0;
+    transition:all .4s ease;
+    padding:0 15px;
+}
+
+.detalle-hover h4{
+    margin-top:12px;
+    margin-bottom:6px;
+    color:#4A4A4A;
+    font-size:16px;
+}
+
+.detalle-hover p{
+    color:#666;
+    font-size:13px;
+    line-height:1.5;
+    margin-bottom:12px;
+}
+
+.producto:hover .detalle-hover{
+    max-height:120px;
+    opacity:1;
+}
+
+/* ============================= */
+/* BOTON */
+/* ============================= */
+
+.boton{
+    display:inline-block;
+    margin-top:40px;
+    background:#F3E6E2;
+    color:white;
+    text-decoration:none;
+    padding:18px 80px;
+    border-radius:30px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.boton:hover{
+    background:#E7A9B0;
+    transform:scale(1.03);
+}
+
+/* ============================= */
+/* MODAL */
+/* ============================= */
+
+.modal{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.65);
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+}
+
+.modal-contenido{
+    background:white;
+    width:450px;
+    max-width:90%;
+    padding:25px;
+    border-radius:20px;
+    text-align:center;
+    position:relative;
+    animation:aparecer .3s ease;
+    box-shadow:0 15px 35px rgba(0,0,0,.25);
+}
+
+.modal-contenido img{
+    width:250px;
+    max-width:100%;
+    border-radius:15px;
+    margin-bottom:15px;
+}
+
+#nombreModal{
+    font-size:30px;
+    color:#4A4A4A;
+    margin-bottom:10px;
+}
+
+#precioModal{
+    font-size:26px;
+    color:#D4AF37;
+    margin-bottom:15px;
+}
+
+#descripcionModal{
+    color:#666;
+    line-height:1.8;
+    font-style:italic;
+}
+
+.cerrar{
+    position:absolute;
+    top:10px;
+    right:18px;
+    font-size:32px;
+    cursor:pointer;
+}
+
+.btn-comprar{
+    margin-top:20px;
+    background:#F6D1D6;
+    color:white;
+    border:none;
+    padding:12px 28px;
+    border-radius:30px;
+    cursor:pointer;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.btn-comprar:hover{
+    background:#E7A9B0;
+}
+
+/* ============================= */
+/* ANIMACION */
+/* ============================= */
+
+@keyframes aparecer{
+
+    from{
+        opacity:0;
+        transform:scale(.8);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+
+}
+
+/* ============================= */
+/* FUENTES */
+/* ============================= */
+
+h1{
+    font-family:'Dancing Script', cursive;
+}
+
+h2{
+    font-family:'Lobster Two', cursive;
+}
+
+h3{
+    font-family:'Noto Serif', serif;
+}
